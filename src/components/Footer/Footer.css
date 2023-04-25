@@ -1,0 +1,13 @@
+footer {
+  min-height: 1vh;
+  text-align: center;
+  align-items: center;
+}
+
+footer > p > a:visited {
+  color: black;
+}
+
+footer > p > a {
+  text-decoration: underline;
+}

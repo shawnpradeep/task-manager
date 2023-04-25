@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header > h1 {
+  font-weight: 400;
+}
+
+.user-signed-in {
+  display: flex;
+  align-items: center;
+}
+
+.user-signed-in > p {
+  padding-left: 5px;
+}
+
+.title {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.profile-picture {
+  cursor: pointer;
+}
