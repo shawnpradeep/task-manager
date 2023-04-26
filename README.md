@@ -10,7 +10,7 @@ Developed by Shawn Pradeep, Kellen Brown, Dan Willams.
 
 ## Screenshots
 
-![App Screenshot](https://github.com/shawnpradeep/task-manager-v2/src/images/screenshot.png?raw=true)
+![App Screenshot](https://github.com/shawnpradeep/task-manager-v2/blob/master/src/images/screenshot.png?raw=true)
 
 ## Run Locally
 
