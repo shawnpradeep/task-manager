@@ -9,5 +9,6 @@ footer > p > a:visited {
 }
 
 footer > p > a {
+  color: black;
   text-decoration: underline;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import TaskList from "./components/TaskList/TaskList";
 import Header from "./components/Header/Header";
@@ -8,16 +8,46 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    // {
+    //   id: "1",
+    //   text: "This is a note",
+    //   time: "2021-03-01 12:00:00",
+    // },
+  ]);
   const [searchText, setSearchText] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  // const printTasks = () => {
-  //   console.log(tasks);
-  // };
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch("http://localhost:3000/api/tasks");
+      const data = await res.json();
+      setTasks(data[0].tasks);
+      // console.log(data[0].tasks);
+    };
 
-  // printTasks();
+    fetchTasks();
+  }, []);
+
+  const updateTasks = async (username, password, newTasks) => {
+    try {
+      const response = await fetch("http://localhost:3000/api/tasks", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password, tasks: newTasks }),
+      });
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const addTask = () => {
+    console.log("HERE");
     let today = new Date();
     let date =
       today.getFullYear() +
@@ -35,7 +65,10 @@ function App() {
       text: "",
       time: dateTime,
     });
+
     setTasks(tempTasks);
+
+    updateTasks("admin", "1234", tasks);
   };
 
   const deleteTask = (id) => {
@@ -45,6 +78,8 @@ function App() {
     if (index < 0) return;
 
     tempTasks.splice(index, 1);
+
+    updateTasks("admin", "1234", tempTasks);
     setTasks(tempTasks);
   };
 
@@ -56,14 +91,18 @@ function App() {
 
     tempTasks[index].text = text;
     setTasks(tempTasks);
-    console.log(tasks);
-    console.log("reaching here");
+    updateTasks("admin", "1234", tasks);
   };
 
   return (
     <div>
-      <Login />
-      <button className="add-task-button" onClick={addTask}>
+      <Login setButtonDisabled={setButtonDisabled} />
+      <button
+        id="addTaskButton"
+        className="add-task-button"
+        onClick={addTask}
+        disabled={buttonDisabled}
+      >
         Add Task
       </button>
       <div className="container">

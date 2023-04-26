@@ -15,18 +15,14 @@ const Footer = () => {
         </a>
         ,{" "}
         <a
-          href="https://github.com/shawnpradeep"
+          href="https://github.com/kellenkbrown"
           target="_blank"
           rel="noreferrer"
         >
           kellen brown
         </a>
         , and{" "}
-        <a
-          href="https://github.com/shawnpradeep"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://github.com/unw10181" target="_blank" rel="noreferrer">
           daniel williams
         </a>
       </p>

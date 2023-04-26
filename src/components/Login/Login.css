@@ -1,0 +1,30 @@
+.login-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  border-radius: 10px;
+  background-color: rgb(209, 207, 207);
+  font-family: "Source Code Pro", monospace;
+}
+
+.register-account {
+  position: fixed;
+  bottom: 90px;
+  left: 20px;
+  z-index: 100;
+  border-radius: 10px;
+  background-color: rgb(209, 207, 207);
+  font-family: "Source Code Pro", monospace;
+}
+
+input {
+  width: 150px;
+  border-radius: 10px;
+}
+
+button {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  font-family: "Source Code Pro", monospace;
+}
