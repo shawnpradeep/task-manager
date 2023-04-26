@@ -9,7 +9,7 @@ function Login({ setButtonDisabled }) {
   function handleLogin(event) {
     event.preventDefault();
 
-    // Verify that MongoDB has a user with this username and password
+    // verify that MongoDB has a user with this username and password
     const authentication = async () => {
       const res = await fetch("http://localhost:3000/api/tasks");
       const data = await res.json();

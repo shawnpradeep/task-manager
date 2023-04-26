@@ -3,6 +3,7 @@ const router = express.Router();
 const Task = require("../../models/User");
 const User = require("../../models/User");
 
+// defines getting routes for the tasks (updating frontend from backend)):
 router.get("/", async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -13,6 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// defines posting routes for the tasks (updating backend from frontend):
 router.put("/", async (req, res) => {
   const { username, password, tasks } = req.body;
 

@@ -6,7 +6,7 @@ Task Manager is a web task management app. The app supports basic **CRUD** (crea
 
 This app was built using **MERN** stack (MongoDB, Express, React, Node.js),
 
-Developed by Shawn Pradeep, Kellen Brown, Dan Willams.
+Developed by Shawn Pradeep, Kellen Brown, Dan Williams.
 
 ## Screenshots
 
